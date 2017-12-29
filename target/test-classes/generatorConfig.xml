@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+
+    <classPathEntry location="C:/Users/didi/.m2/repository/mysql/mysql-connector-java/5.1.35/mysql-connector-java-5.1.35.jar"></classPathEntry>
+
+    <context id="context" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="false"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://rm-wz9ork0gy9k84f168oo.mysql.rds.aliyuncs.com/cas?serverTimezone=UTC&amp;characterEncoding=UTF-8&amp;useSSL=false"
+                        userId="root"
+                        password="sinc@123456">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.zzx.demo.model" targetProject="target">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.zzx.demo.mapper" targetProject="target">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zzx.demo.mapper" targetProject="target">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--<table schema="erp" tableName="advice_his" domainObjectName="AdviceHis"-->
+        <!--/>-->
+
+        <!--<table schema="erp" tableName="patient" domainObjectName="Patient"-->
+        <!--/>-->
+
+        <table schema="cas" tableName="account" domainObjectName="Account"
+        />
+
+        <!--<table schema="cas" tableName="cure_his" domainObjectName="CureHis"-->
+        <!--/>-->
+
+        <!--<table schema="erp" tableName="diagnosis_his" domainObjectName="DiagnosisHis"-->
+        <!--/>-->
+
+        <!--<table schema="erp" tableName="communication" domainObjectName="Communication"-->
+        <!--/>-->
+
+        <!--<table schema="erp" tableName="cure_his" domainObjectName="CureHis"-->
+        <!--/>-->
+
+    </context>
+</generatorConfiguration>
