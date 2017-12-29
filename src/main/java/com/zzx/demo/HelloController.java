@@ -17,6 +17,7 @@ import org.springframework.context.annotation.ImportResource;
 
 @EnableAutoConfiguration
 @SpringBootApplication
+
 @ServletComponentScan
 @MapperScan("com.zzx.demo.mapper")
 //@ImportResource("classpath:springconfig/*.xml")
