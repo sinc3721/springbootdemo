@@ -7,6 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ImportResource;
 
+import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+
 /**
  * @author sinc
  * @version V1.0
@@ -25,7 +29,30 @@ import org.springframework.context.annotation.ImportResource;
 public class HelloController {
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(HelloController.class, args);
+//        SpringApplication.run(HelloController.class, args);
+
+        RandomAccessFile raf = new RandomAccessFile("/Users/admin/Desktop/test/test","rws");
+        FileChannel fileChannel = raf.getChannel();
+        ByteBuffer buf = ByteBuffer.allocate(2);
+        int status = -1;
+        while ((status = fileChannel.read(buf)) > -1){
+
+//            buf.flip();
+            System.out.println(buf);
+
+
+            if(buf.hasRemaining()){
+
+                System.out.print((char) buf.get()); // read 1 byte at a time
+
+            }
+
+            buf.clear();
+
+        }
+
+
+
     }
 
 
